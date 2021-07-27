@@ -28,18 +28,9 @@ import android.util.Log
 /**
  * A BroadcastReceiver that notifies of important wifi p2p events.
  */
-class WiFiDirectBroadcastReceiver
-/**
- * @param manager WifiP2pManager system service
- * @param channel Wifi p2p channel
- * @param activity activity associated with the receiver
- */(private val manager: WifiP2pManager?, private val channel: WifiP2pManager.Channel,
+class WiFiDirectBroadcastReceiver(private val manager: WifiP2pManager?, private val channel: WifiP2pManager.Channel,
     private val activity: WiFiDirectActivity) : BroadcastReceiver() {
-    /*
-     * (non-Javadoc)
-     * @see android.content.BroadcastReceiver#onReceive(android.content.Context,
-     * android.content.Intent)
-     */
+
     override fun onReceive(context: Context, intent: Intent) {
         val action = intent.action
         if (WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION == action) {

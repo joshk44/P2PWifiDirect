@@ -75,7 +75,7 @@ class WiFiDirectActivity : FragmentActivity(), WifiP2pManager.ChannelListener,
         }
 
         // Hardware capability check
-        val wifiManager: WifiManager? = getApplicationContext().getSystemService(Context.WIFI_SERVICE) as WifiManager?
+        val wifiManager: WifiManager? = this.getApplicationContext().getSystemService(Context.WIFI_SERVICE) as WifiManager?
         if (wifiManager == null) {
             Log.e(TAG, "Cannot get Wi-Fi system service.")
             return false
@@ -238,7 +238,6 @@ class WiFiDirectActivity : FragmentActivity(), WifiP2pManager.ChannelListener,
     }
 
     override fun cancelDisconnect() {
-
         /*
          * A cancel abort request by user. Disconnect i.e. removeGroup if
          * already connected. Else, request WifiP2pManager to abort the ongoing
